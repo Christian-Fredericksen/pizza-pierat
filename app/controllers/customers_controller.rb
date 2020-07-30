@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
-    #create
+
+#Create
+
     def new
         @customer = Customer.new
     end
@@ -8,7 +10,13 @@ class CustomersController < ApplicationController
         @customer = Customer.new(customer_params)
         @customer.save
         redirect_to customer_path(@customer)
-    end     
+    end
+
+#Read
+
+    def index
+        @customers = Customer.all
+    end
 
     def show
         @customer = Customer.find(params[:id])
