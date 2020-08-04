@@ -7,6 +7,7 @@ class CustomersController < ApplicationController
     end
 
     def create
+        #   byebug
         @customer = Customer.new(customer_params)
         @customer.save
         redirect_to customer_path(@customer)
@@ -25,6 +26,6 @@ class CustomersController < ApplicationController
     private
     def customer_params
         params.require(:customer).permit(:first_name, :last_name, :street_address, :city, :state, 
-        :zip_code,:email, :phone_number)
+        :zip_code, :email, :phone_number, :password)
     end
 end

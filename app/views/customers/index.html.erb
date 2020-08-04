@@ -1,7 +1,7 @@
 <h1>Customer Base</h1><br>
     
-    <%= @customer.each do |c| %>
-        <%= c.full_name %>
+    <% @customers.each do |c| %>
+        <%= c.full_name %><br>
         <%= c.email %>
     <% end %>
     

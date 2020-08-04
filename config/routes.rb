@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sessions, only: [:create]
   resources :orders
   resources :pizzas
   resources :customers
