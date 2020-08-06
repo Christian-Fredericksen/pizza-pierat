@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-
+    skip_before_action :authorized, only: [:new, :create]
 #Create
 
     def new
@@ -7,12 +7,10 @@ class CustomersController < ApplicationController
     end
 
     def create
-        #   byebug
-        @customer = Customer.new(customer_params)
-        @customer.save
-        redirect_to customer_path(@customer)
+        customer = Customer.create(customer_params)
+        session[:customer_id] = customer.id
+        redirect_to customer_path
     end
-
 #Read
 
     def index
@@ -25,7 +23,6 @@ class CustomersController < ApplicationController
 
     private
     def customer_params
-        params.require(:customer).permit(:first_name, :last_name, :street_address, :city, :state, 
-        :zip_code, :email, :phone_number, :password)
+        params.require(:customer).permit(:email, :password, :password_confirmation, :username)
     end
 end
