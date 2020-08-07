@@ -9,7 +9,7 @@ class CustomersController < ApplicationController
     def create
         customer = Customer.create(customer_params)
         session[:customer_id] = customer.id
-        redirect_to customer_path
+        redirect_to customer_path(customer)
     end
 #Read
 

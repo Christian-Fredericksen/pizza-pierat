@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
     before_action :authorized
     helper_method :logged_in?
+
+    def home
+    end
   
     def current_customer
       if session[:customer_id]
@@ -13,6 +16,6 @@ class ApplicationController < ActionController::Base
     end
   
     def authorized
-      redirect_to login_path unless logged_in?
+      home unless logged_in?
     end
 end
