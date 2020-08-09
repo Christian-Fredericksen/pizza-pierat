@@ -1,1 +1,18 @@
 <h1>IT WORKED!</h1>
+<body>
+<div class="form_row">
+    <label for="crust">Crust:</label>
+    <% [ 'Thin crust', 'Hand Tossed', 'Pan', 'Deep Dish' ].each do |crust| %>
+      <br><%= radio_button_tag 'crust', crust, @crust == crust %>
+      <%= crust.humanize %>
+    <% end %>
+</div>
+<br>
+<div class="form_row">
+    <label for="cheese">Cheese:</label>
+    <% [ 'Less', 'Regular', 'Xtra' ].each do |cheese| %>
+      <br><%= radio_button_tag 'cheese', cheese, @cheese == cheese %>
+      <%= cheese.humanize %>
+    <% end %>
+</div>
+</body>

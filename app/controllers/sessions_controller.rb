@@ -23,6 +23,6 @@ class SessionsController < ApplicationController
     # Logout
     def destroy
       session.delete(:customer_id)
-      redirect_to login_path
+      redirect_to home_path
     end
   end
