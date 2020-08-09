@@ -1,43 +1,41 @@
 <h1>IT WORKED!</h1>
 <body>
+
+
+
 <div class="form_row">
     <label for="crust">Crust:</label>
     <% [ 'Thin crust', 'Hand Tossed', 'Pan', 'Deep Dish' ].each do |crust| %>
       <br><%= radio_button_tag 'crust', crust, @crust == crust %>
       <%= crust.humanize %>
     <% end %>
-
-    <br><br>
-  
+</div>
+<br>
+<div class="form_row">
     <label for="cheese">Cheese:</label>
     <% [ 'Less', 'Regular', 'Xtra' ].each do |cheese| %>
-      <br><%= radio_button("pizza", "toppings", "rails") %>
+      <br><%= radio_button_tag 'cheese', cheese, @cheese == cheese %>
       <%= cheese.humanize %>
     <% end %>
-
-    <br><br>
-      
+</div>
+<br>
+<div class="form_row">
     <label for="meats">Meats:</label>
-    <% [ 'Italian Sausage', 'Pepperoni','Ham', 'Canadian Bacon', 'Chicken', 'Hamburger' ].each do |meats| %>
-      <br><%= radio_button("pizza", "toppings", "rails") %>
-      <%= meats %>
+    <% [ 'Italian Sausage', 'Pepperoni', 'Ham', 'Canadian Bacon', 'Chicken', 'Hamburger' ].each do |meats| %>
+      <br><%= check_box_tag 'meats', meats, @meats == meats %>
+      <%= meats.humanize %>
     <% end %>
-
-    <br><br>
-
+</div>
+<br>
+<div class="form_row">
     <label for="veggies">Veggies:</label>
-    <% [ 'Artichoke', 'Basil','Onions', 'Black Olives', 'Mushrooms', 'Red Peppers', 'Tomatoes'].each do |meats| %>
-      <br><%= radio_button("pizza", "toppings", "rails") %>
-      <%= meats %>
+    <% [ 'Artichoke', 'Onions','Black Olives', 'Mushrooms', 'Red Peppers' ].each do |veggies| %>
+      <br><%= check_box_tag 'veggies', veggies, @veggies == veggies %>
+      <%= veggies.humanize %>
     <% end %>
-
-    <br><br>
-
 </div>
 
 <%= submit_tag "Submit" %>
 
-
-
-
 </body>
+

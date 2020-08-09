@@ -5,6 +5,8 @@ class CreatePizzas < ActiveRecord::Migration[6.0]
       t.text :toppings
       t.string :crust
       t.integer :price
+      t.integer :customer_id
+      t.integer :order_id
 
       t.timestamps
     end

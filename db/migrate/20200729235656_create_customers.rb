@@ -9,6 +9,7 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
       t.integer :zip_code
       t.string :email
 
+
       t.timestamps
     end
   end
