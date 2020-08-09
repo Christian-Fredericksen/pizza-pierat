@@ -6,13 +6,38 @@
       <br><%= radio_button_tag 'crust', crust, @crust == crust %>
       <%= crust.humanize %>
     <% end %>
-</div>
-<br>
-<div class="form_row">
+
+    <br><br>
+  
     <label for="cheese">Cheese:</label>
     <% [ 'Less', 'Regular', 'Xtra' ].each do |cheese| %>
-      <br><%= radio_button_tag 'cheese', cheese, @cheese == cheese %>
+      <br><%= radio_button("pizza", "toppings", "rails") %>
       <%= cheese.humanize %>
     <% end %>
+
+    <br><br>
+      
+    <label for="meats">Meats:</label>
+    <% [ 'Italian Sausage', 'Pepperoni','Ham', 'Canadian Bacon', 'Chicken', 'Hamburger' ].each do |meats| %>
+      <br><%= radio_button("pizza", "toppings", "rails") %>
+      <%= meats %>
+    <% end %>
+
+    <br><br>
+
+    <label for="veggies">Veggies:</label>
+    <% [ 'Artichoke', 'Basil','Onions', 'Black Olives', 'Mushrooms', 'Red Peppers', 'Tomatoes'].each do |meats| %>
+      <br><%= radio_button("pizza", "toppings", "rails") %>
+      <%= meats %>
+    <% end %>
+
+    <br><br>
+
 </div>
+
+<%= submit_tag "Submit" %>
+
+
+
+
 </body>

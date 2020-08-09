@@ -1,0 +1,3 @@
+<% [ 'Italian Sausage', 'Pepperoni','Ham', 'Canadian Bacon', 'Chicken', 'Hamburger' ].each do |meats| %>
+      <br><%= select_tag(:meat_id, options_for_select([['Italian Sausage', 1], ['Pepperoni', 2], ['Ham', 3], ['Canadian Bacon', 4 ], 
+      ['Chicken', 5], ['Hamburger', 6] ], 2) %>
