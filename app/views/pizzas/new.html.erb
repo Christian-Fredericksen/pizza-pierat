@@ -1,9 +1,17 @@
 <h1>Whats it gonna be, <%= @current_customer.username %>?</h1>
 <body>
 
-<% form_for @pizza do  |f| %> 
+<%= form_for @pizza do  |f| %>
+    <strong> Crust </strong><br>
     <%= f.label :thin_crust %>
-    <%= f.check_box :crust %>
+    <%= f.radio_button :crust, 'Thin Crust' %>
+    <%= f.label :hand_tossed %>
+    <%= f.radio_button :crust, 'Hand Tossed' %>
+    <%= f.label :pan %>
+    <%= f.radio_button :crust, 'Pan' %>
+    <%= f.label :deep_dish %>
+    <%= f.radio_button :crust, 'Deep Dish' %>
+    <br>
     <%= f.submit %>
     
   <% end %>
