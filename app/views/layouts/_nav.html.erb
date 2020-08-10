@@ -1,5 +1,5 @@
 <% if logged_in? %>
-<h5><%= link_to "Logout", sessions_path, method: :delete %> <%= link_to "Build My Own", new_pizza_path %> </h5>
+<h5><%= link_to "Logout", sessions_path, method: :delete %> | <%= link_to "Build My Own", new_pizza_path %> </h5>
 <% else %>
 <h5>You are not logged in! <%= link_to "Login", login_path %> or <%= link_to "Sign Up", new_customer_path %></h5>
 <% end %>

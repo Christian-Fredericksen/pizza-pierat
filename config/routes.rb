@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:show]
   end
   resources :customers do 
-    resources :pizzas, only: [:new, :show, :index]
+    resources :pizzas, only: [:new, :create, :show, :index]
   end
 
   resources :orders

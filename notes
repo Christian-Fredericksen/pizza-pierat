@@ -1,3 +1,39 @@
 <% [ 'Italian Sausage', 'Pepperoni','Ham', 'Canadian Bacon', 'Chicken', 'Hamburger' ].each do |meats| %>
       <br><%= select_tag(:meat_id, options_for_select([['Italian Sausage', 1], ['Pepperoni', 2], ['Ham', 3], ['Canadian Bacon', 4 ], 
       ['Chicken', 5], ['Hamburger', 6] ], 2) %>
+
+
+# this goes back in views/pizza/new
+      <div class="form_row">
+    <label for="crust">Crust:</label>
+    <% [ 'Thin crust', 'Hand Tossed', 'Pan', 'Deep Dish' ].each do |crust| %>
+      <br><%= radio_button_tag 'crust', crust, @crust == crust %>
+      <%= crust.humanize %>
+    <% end %>
+</div>
+<br>
+<div class="form_row">
+    <label for="cheese">Cheese:</label>
+    <% [ 'Less', 'Regular', 'Xtra' ].each do |cheese| %>
+      <br><%= radio_button_tag 'cheese', cheese, @cheese == cheese %>
+      <%= cheese.humanize %>
+    <% end %>
+</div>
+<br>
+<div class="form_row">
+    <label for="meats">Meats:</label>
+    <% [ 'Italian Sausage', 'Pepperoni', 'Ham', 'Canadian Bacon', 'Chicken', 'Hamburger' ].each do |meats| %>
+      <br><%= check_box_tag 'meats', meats, @meats == meats %>
+      <%= meats.humanize %>
+    <% end %>
+</div>
+<br>
+<div class="form_row">
+    <label for="veggies">Veggies:</label>
+    <% [ 'Artichoke', 'Onions','Black Olives', 'Mushrooms', 'Red Peppers' ].each do |veggies| %>
+      <br><%= check_box_tag 'veggies', veggies, @veggies == veggies %>
+      <%= veggies.humanize %>
+    <% end %>
+</div>
+
+<%= submit_tag "Submit" %>
