@@ -4,8 +4,8 @@ class PizzasController < ApplicationController
     end
 
     def create
-        pizza = Pizza.create(pizza_params)
-        redirect_to pizza_path(pizza)
+        @pizza = Pizza.create(pizza_params)
+        redirect_to pizza_path(@pizza)
     end   
 
     def show
