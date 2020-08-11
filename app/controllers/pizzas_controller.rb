@@ -3,7 +3,7 @@ class PizzasController < ApplicationController
         @pizza = Pizza.new 
     end
 
-    def create
+    def create        
         @pizza = Pizza.create(pizza_params)
         redirect_to pizza_path(@pizza)
     end   
@@ -15,7 +15,7 @@ class PizzasController < ApplicationController
     private
 
     def pizza_params
-        params.require(:pizza).permit(:crust, :cheese, :meats, :veggies)
+        params.require(:pizza).permit(:size, :crust, :toppings)
     end
 
 end
