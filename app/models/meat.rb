@@ -1,0 +1,2 @@
+class Meat < ApplicationRecord
+end
