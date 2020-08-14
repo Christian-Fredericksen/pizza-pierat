@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'veggie/index'
+  get 'meat/index'
   get '/home', to: "application#home", as:"home"
   get '/login', to: "sessions#new", as: "login"
   post '/sessions', to: "sessions#create", as: "sessions"
