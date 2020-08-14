@@ -4,10 +4,14 @@ class PizzasController < ApplicationController
     end
 
     def create 
-        #byebug       
+        @customer = current_customer
         @pizza = Pizza.create(pizza_params)
-        redirect_to pizza_path(@pizza)
+        redirect_to customer_pizza_path(@customer, @pizza)
     end   
+
+    def index
+        @pizzas = Pizza.all
+    end
 
     def show
         @pizza = Pizza.find(params[:pizza_id])
