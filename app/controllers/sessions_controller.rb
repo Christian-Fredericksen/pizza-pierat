@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     def create_with_omniauth
       omniauth = request.env['omniauth.auth']['info']
       customer = Customer.find_or_create_by(email: omniauth["email"]) do |c|
-        c.username = omniauth["name"]
+        c.username = omniauth["first_name"]
         c.password = SecureRandom.hex
       end
       session[:customer_id] = customer.id
