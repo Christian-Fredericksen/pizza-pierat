@@ -3,13 +3,14 @@ class CustomersController < ApplicationController
 #Create
 
     def new
-        @customer = Customer.new
+        @current_customer = Customer.new
     end
 
     def create
-        customer = Customer.create(customer_params)
-        session[:customer_id] = customer.id
-        redirect_to customer_path(customer)
+        @current_customer = Customer.create(customer_params)
+        #byebug
+        session[:customer_id] = @current_customer.id
+        redirect_to customer_path(@current_customer)
     end
 #Read
 
@@ -18,7 +19,8 @@ class CustomersController < ApplicationController
     end
 
     def show
-        @customer = Customer.find(params[:id])
+        #byebug
+        @current_customer = Customer.find(params[:id])
     end
 
     private

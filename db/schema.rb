@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_202033) do
+ActiveRecord::Schema.define(version: 2020_08_15_222345) do
 
   create_table "customers", force: :cascade do |t|
     t.string "email"
@@ -19,12 +19,6 @@ ActiveRecord::Schema.define(version: 2020_08_13_202033) do
     t.string "password_digest"
     t.string "password"
     t.string "username"
-  end
-
-  create_table "meats", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -42,16 +36,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_202033) do
     t.string "size"
     t.string "crust"
     t.string "cheese"
-    t.string "meats"
-    t.string "veggies"
     t.integer "customer_id"
-    t.integer "order_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "veggies", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

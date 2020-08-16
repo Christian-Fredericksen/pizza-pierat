@@ -1,12 +1,16 @@
 class PizzasController < ApplicationController
     def new 
+        @customer = @current_customer
         @pizza = Pizza.new 
     end
 
     def create 
-        @customer = current_customer
+       
         @pizza = Pizza.create(pizza_params)
-        redirect_to customer_pizza_path(@customer, @pizza)
+        #byebug
+        
+        redirect_to pizza_path(@pizza)
+       
     end   
 
     def index
@@ -20,7 +24,7 @@ class PizzasController < ApplicationController
     private
 
     def pizza_params
-        params.require(:pizza).permit(:size, :crust, :cheese, :meats, :veggies)
+        params.require(:pizza).permit(:size, :crust, :cheese)
     end
 
 end

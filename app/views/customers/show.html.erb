@@ -1,2 +1,2 @@
-<h1>Welcome aboard, <%= @customer.username%>! </h1>
-<p><%= link_to "Build", new_customer_pizza_path(@customer.id)%> your own pizza or take one of <%= link_to "ours"%></p>
+<h1>Welcome aboard, <%= @current_customer.username%>! </h1>
+<p><%= link_to "Build", new_customer_pizza_path(@current_customer.id)%> your own pizza or take one of <%= link_to "ours"%></p>
