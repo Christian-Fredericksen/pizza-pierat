@@ -1,3 +1,0 @@
-class MeatController < ApplicationController
- 
-end

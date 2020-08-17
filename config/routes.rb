@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :toppings
   get '/auth/google_oauth2/callback', to: "sessions#create_with_omniauth"
   get '/home', to: "application#home", as:"home"
   get '/login', to: "sessions#new", as: "login"
