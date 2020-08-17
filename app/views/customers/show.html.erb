@@ -1,4 +1,4 @@
-<% if @customer == logged_in? %></h1>
+<% if @customer != current_customer %></h1>
 <%= "You're not alowed here, you monster hacker!" %>
 <% else %>
 <h1>Welcome aboard, </h1><%= @customer.username %>

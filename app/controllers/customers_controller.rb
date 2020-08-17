@@ -13,7 +13,14 @@ class CustomersController < ApplicationController
         redirect_to customer_path(@customer)
     end
 #Read
+    def current_customer
+        if session[:customer_id]
+        current_customer = Customer.find(session[:customer_id])
+        end
 
+        #@current_customer ||= Customer.find_by_id(session[:customer_id]) if session[:customer_id]
+
+    end
     def index
         @customers = Customer.all
     end
