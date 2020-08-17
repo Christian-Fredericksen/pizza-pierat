@@ -1,2 +1,3 @@
 class Topping < ApplicationRecord
+    
 end
