@@ -4,7 +4,10 @@ class ToppingsController < ApplicationController
     def new
         @topping = Topping.new 
     end
-
+    
+    def index
+        @toppings = Topping.all
+    end
     private
 
     def topping_params

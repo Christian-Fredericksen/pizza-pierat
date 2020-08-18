@@ -1,3 +1,3 @@
 class Topping < ApplicationRecord
-    belongs_to :pizza
+    belongs_to :pizza, optional: true
 end
