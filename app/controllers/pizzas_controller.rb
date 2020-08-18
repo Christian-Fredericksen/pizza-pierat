@@ -5,11 +5,12 @@ class PizzasController < ApplicationController
     end
 
     def create 
-        
+        toppings = []
         # @customer = current_customer
         # @pizza = Pizza.create(pizza_params)
         @pizza = Pizza.new(pizza_params)
         @pizza.customer_id = session[:customer_id]
+        @pizza.toppings << toppings
         if @pizza.save        
         redirect_to pizza_path(@pizza)
         else
@@ -29,7 +30,7 @@ class PizzasController < ApplicationController
     private
 
     def pizza_params
-        params.require(:pizza).permit(:size, :crust, :cheese, :customer_id)
+        params.require(:pizza).permit(:size, :crust, :cheese, :toppings, :customer_id)
     end
 
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :toppings
+  
   get '/auth/google_oauth2/callback', to: "sessions#create_with_omniauth"
   get '/home', to: "application#home", as:"home"
   get '/login', to: "sessions#new", as: "login"
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :customers do 
     resources :pizzas, only: [:new, :create, :show, :index]
   end
-
+  resources :toppings
   resources :orders
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

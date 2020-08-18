@@ -1,0 +1,11 @@
+<%= form_for @topping do |f| %>
+    <% if params[:pizza_id] %>
+    <%= f.hidden_fields :pizza_id %>
+    <% else %>
+    <%= f.label :pizza_id, "Select Topping" %>
+    <%= f.collection_select :pizza_id, Pizza, :id, include_blank: true %>
+    <% end %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+    <% end %>

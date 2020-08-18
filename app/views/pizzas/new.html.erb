@@ -32,24 +32,7 @@
     <%= f.label :Xtra %>
     <%= f.radio_button :cheese, 'Xtra' %>
     <br><br>
-    <strong> Toppings </strong><br>
-    <div class="form_row">
-        <label for="meats"><strong> Meats</strong></label>
-        <br>
-        <% [ 'Italian Sausage', 'Pepperoni', 'Ham', 'Canadian Bacon', 'Chicken', 'Hamburger' ].each do |meats| %>
-        <%= check_box_tag 'meats', meats, @meats == meats %>
-        <%= meats.humanize %>
-        <% end %>
-    </div>
-    <br>
-    <div class="form_row">
-        <label for="veggies"><strong> Veggies </strong></label>
-        <br>
-        <% [ 'Artichoke', 'Onions','Black Olives', 'Mushrooms', 'Red Peppers' ].each do |veggies| %>
-        <%= check_box_tag 'veggies', veggies, @veggies == veggies %>
-        <%= veggies.humanize %>
-        <% end %>
-    </div>
+    
     <%= f.submit %>
     
   <% end %>
