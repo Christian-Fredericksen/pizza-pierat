@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_195220) do
+ActiveRecord::Schema.define(version: 2020_08_18_190123) do
+
+  create_table "add_ons", force: :cascade do |t|
+    t.integer "pizza_id", null: false
+    t.integer "topping_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pizza_id"], name: "index_add_ons_on_pizza_id"
+    t.index ["topping_id"], name: "index_add_ons_on_topping_id"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "email"
@@ -48,4 +57,6 @@ ActiveRecord::Schema.define(version: 2020_08_17_195220) do
     t.integer "pizza_id"
   end
 
+  add_foreign_key "add_ons", "pizzas"
+  add_foreign_key "add_ons", "toppings"
 end
