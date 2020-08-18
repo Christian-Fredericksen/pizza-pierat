@@ -30,7 +30,7 @@ class PizzasController < ApplicationController
     private
 
     def pizza_params
-        params.require(:pizza).permit(:size, :crust, :cheese, :customer_id)
+        params.require(:pizza).permit(:size, :crust, :cheese, :add_on_ids [], :customer_id)
     end
 
 end
