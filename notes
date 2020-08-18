@@ -4,6 +4,9 @@
 
 
 # this goes back in views/pizza/new
+# this goes back in views/pizza/new
+# this goes back in views/pizza/new
+
       <div class="form_row">
     <label for="crust">Crust:</label>
     <% [ 'Thin crust', 'Hand Tossed', 'Pan', 'Deep Dish' ].each do |crust| %>
@@ -38,11 +41,9 @@
 
 <%= submit_tag "Submit" %>
 
-
-
-
-
-
+TOPPINGS NEW.HTML.ERB
+TOPPINGS NEW.HTML.ERB
+TOPPINGS NEW.HTML.ERB
 
 <strong> Toppings </strong><br>
     <div class="form_row">
@@ -62,3 +63,51 @@
         <%= veggies.humanize %>
         <% end %>
     </div>
+
+
+    PIZZA NEW.HTML.ERB
+    PIZZA NEW.HTML.ERB
+    PIZZA NEW.HTML.ERB
+
+
+<body>
+
+<%= form_for @pizza do  |f| %>
+    <strong> Size </strong><br>
+    <%= f.label :personal %>
+    <%= f.radio_button :size, 'personal 6"' %>
+    <%= f.label :small %> 
+    <%= f.radio_button :size, 'Small 10"' %>
+    <%= f.label :medium %>
+    <%= f.radio_button :size, 'Medium 12"' %>
+    <%= f.label :large %>
+    <%= f.radio_button :size, 'Large 14"' %>
+    <%= f.label :xtra_large %>
+    <%= f.radio_button :size, 'Xtra Large 16"' %>
+    <br><br>
+    <strong> Crust </strong><br>
+    <%= f.label :thin_crust %>
+    <%= f.radio_button :crust, 'Thin Crust' %>
+    <%= f.label :hand_tossed %>
+    <%= f.radio_button :crust, 'Hand Tossed' %>
+    <%= f.label :pan %>
+    <%= f.radio_button :crust, 'Pan' %>
+    <%= f.label :deep_dish %>
+    <%= f.radio_button :crust, 'Deep Dish' %>
+    <br><br>
+    <strong> Cheese </strong><br>
+    <%= f.label :Light %>
+    <%= f.radio_button :cheese, 'Light' %>
+    <%= f.label :Regular %>
+    <%= f.radio_button :cheese, 'Regular' %>
+    <%= f.label :Xtra %>
+    <%= f.radio_button :cheese, 'Xtra' %>
+    <br><br>
+    
+    <%= f.submit %>
+    
+  <% end %>
+
+
+
+</body>

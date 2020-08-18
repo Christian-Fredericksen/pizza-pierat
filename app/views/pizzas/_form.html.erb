@@ -1,0 +1,27 @@
+<h1>Whats it gonna be, <%= @customer.username %>?</h1><br>
+<h4>Size:</h4>
+<%= form_for @pizza do |f| %>
+    <%= f.label :small %> 
+    <%= f.radio_button :size, 'Small 10"' %> |
+    <%= f.label :medium %>
+    <%= f.radio_button :size, 'Medium 12"' %> |
+    <%= f.label :large %>
+    <%= f.radio_button :size, 'Large 14"' %>
+    
+    <h4>Crust:</h4>
+    <%= f.label :thin %> 
+    <%= f.radio_button :crust, 'Thin crust' %> |
+    <%= f.label :hand_tossed %>
+    <%= f.radio_button :crust, 'Hand tossed' %> |
+    <%= f.label :pan %>
+    <%= f.radio_button :crust, 'Pan' %>
+
+    <h4>Cheese:</h4>
+    <%= f.label :light %> 
+    <%= f.radio_button :cheese, 'Light cheese' %> |
+    <%= f.label :regular %>
+    <%= f.radio_button :cheese, 'Regular cheese' %> |
+    <%= f.label :extra %>
+    <%= f.radio_button :cheese, 'Extra cheese' %><br>
+    <%= f.submit %>
+    <% end %>
