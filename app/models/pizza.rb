@@ -4,6 +4,6 @@ class Pizza < ApplicationRecord
     has_many :add_ons
     has_many :toppings, through: :add_ons
     def description
-        self.size + ", " + self.crust + " pizza, with " + self.cheese + "."
+        self.size + ", " + self.cheese + " " + self.crust + " pizza with: "
     end
 end

@@ -2,11 +2,11 @@
 <h4>Size:</h4>
 <%= form_for @pizza do |f| %>
     <%= f.label :small %> 
-    <%= f.radio_button :size, 'Small 10"' %> |
+    <%= f.radio_button :size, 'Small, 10"' %> |
     <%= f.label :medium %>
-    <%= f.radio_button :size, 'Medium 12"' %> |
+    <%= f.radio_button :size, 'Medium, 12"' %> |
     <%= f.label :large %>
-    <%= f.radio_button :size, 'Large 14"' %>
+    <%= f.radio_button :size, 'Large, 14"' %>
     
     <h4>Crust:</h4>
     <%= f.label :thin %> 
@@ -23,5 +23,17 @@
     <%= f.radio_button :cheese, 'Regular cheese' %> |
     <%= f.label :extra %>
     <%= f.radio_button :cheese, 'Extra cheese' %><br>
+
+    <h4>Add ons:</h4>
+    <p>    
+    <% for topping in Topping.all.sort %>
+      <%= topping.name %> 
+      <%= check_box_tag "pizza[topping_ids][]", topping.id, @pizza.toppings.include?(topping) %> |
+    <% end %>
+  </p>
+  <div class="actions">
     <%= f.submit %>
+  </div>
+    
+
     <% end %>

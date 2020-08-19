@@ -1,3 +1,10 @@
-<h1>You got a </h1>
+<h1>You got: </h1>
 <br>
-<%= @pizza.description %>
+<p> A <%=  @pizza.description %>
+    <% @pizza.toppings.each do |t| %>
+        <li>
+            <%= t.name %>
+        </li>
+    <% end %><br>
+    If this is correct click <%= link_to "Y" %> | <%= link_to "N", edit_pizza_path(@pizza) %>
+</p>
