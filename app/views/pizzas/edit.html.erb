@@ -1,2 +1,3 @@
 <h1>Edit Pizza Here</h1>
-<%= render 'form' %>
+<%= render 'form' %><br>
+<%= link_to "Delete", {:controller => "pizzas", :action => 'destroy'}, :method => :delete if @pizza.customer == current_customer %><br><br>

@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
     def logged_in?
       !!current_customer
     end
+    
   
     def authorized
       home unless logged_in?

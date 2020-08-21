@@ -3,4 +3,9 @@ class Topping < ApplicationRecord
     has_many :add_ons
     has_many :pizzas, through: :add_ons
 
+    def self.order_toppings
+        order('name')
+    end 
+      
+
 end

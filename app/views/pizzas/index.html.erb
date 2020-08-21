@@ -1,0 +1,12 @@
+<h1>Past Pizzas</h1>
+
+<% @pizzas.each do |p| %>
+    <%= p.description %><br>
+    <% p.add_ons.each do |t| %>
+        <li>
+            <%= t.topping.name %>
+        </li>
+    <% end %><br>
+<% end %>
+
+

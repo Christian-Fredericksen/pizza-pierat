@@ -26,7 +26,7 @@
 
     <h4>Add ons:</h4>
     <p>    
-    <% for topping in Topping.all.sort %>
+    <% for topping in Topping.order_toppings %>
       <%= topping.name %> 
       <%= check_box_tag "pizza[topping_ids][]", topping.id, @pizza.toppings.include?(topping) %> |
     <% end %>

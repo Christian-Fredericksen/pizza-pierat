@@ -26,7 +26,20 @@ class PizzasController < ApplicationController
     end
 
     def edit
+        @customer = current_customer
         @pizza = Pizza.find(params[:id])
+    end
+
+    def update
+        @pizza = Pizza.find(params[:id])
+        @pizza.update(pizza_params)
+        redirect_to pizza_path(@pizza)
+    end
+
+    def destroy
+        @pizza = Pizza.find(params[:id])
+        @pizza.destroy
+        redirect_to new_pizza_path
     end
 
     private
