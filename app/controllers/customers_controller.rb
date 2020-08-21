@@ -27,7 +27,7 @@ class CustomersController < ApplicationController
 
     def show
         #byebug
-        @customer = Customer.find(params[:id])
+        @current_customer = Customer.find(params[:id])
     end
 
     private

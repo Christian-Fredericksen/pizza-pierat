@@ -6,13 +6,10 @@ Rails.application.routes.draw do
   post '/sessions', to: "sessions#create", as: "sessions"
   delete '/sessions', to: "sessions#destroy"
   
-  resources :pizzas do 
-    resources :orders, only: [:show]
-  end
+  resources :pizzas 
   resources :customers do 
     resources :pizzas, only: [:new, :create, :show, :index]
   end
   resources :toppings
-  resources :orders
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

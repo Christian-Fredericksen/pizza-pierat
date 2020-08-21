@@ -1,6 +1,6 @@
 <h1>Past Pizzas</h1>
 
-<% @pizzas.each do |p| %>
+<% current_customer.pizzas.each do |p| %>
     <%= p.description %><br>
     <% p.add_ons.each do |t| %>
         <li>

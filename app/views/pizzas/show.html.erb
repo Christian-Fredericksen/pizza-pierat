@@ -6,5 +6,5 @@
             <%= t.name %>
         </li>
     <% end %><br>
-    If this is correct you may <%= link_to "place" %> your order or <%= link_to "edit", edit_pizza_path(@pizza) %>.
+    If this is correct you may <%= link_to "place", customer_pizzas_path(current_customer.id) %></h5> your order or <%= link_to "edit", edit_pizza_path(@pizza) %>.
 </p>

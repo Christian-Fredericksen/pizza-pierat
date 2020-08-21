@@ -1,6 +1,6 @@
-<% if @customer != current_customer %></h1>
+<% if  @current_customer != current_customer %></h1>
 <%= "You're not alowed here, you monster hacker!" %>
 <% else %>
-<h1>Welcome aboard, </h1><%= @customer.username %>
+<h1>Welcome aboard, </h1><%= @current_customer.username %>
 <% end %>
-<p><%= link_to "Build", new_customer_pizza_path(@customer.id)%> your pizza.</p>
+<p><%= link_to "Build", new_customer_pizza_path(current_customer.id)%> your pizza.</p>

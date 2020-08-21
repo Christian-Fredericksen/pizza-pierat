@@ -21,7 +21,8 @@ class PizzasController < ApplicationController
         @pizzas = Pizza.all
     end
 
-    def show        
+    def show   
+        customer_id = session[:customer_id] 
         @pizza = Pizza.find(params[:id])
     end
 
@@ -44,7 +45,7 @@ class PizzasController < ApplicationController
 
     private
 
-    def pizza_params
+    def pizza_params       
         params.require(:pizza).permit(:size, :crust, :cheese, :customer_id, topping_ids: [] )
     end
 
