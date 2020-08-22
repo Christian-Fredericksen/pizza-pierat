@@ -6,6 +6,7 @@ class PizzasController < ApplicationController
 
     def create 
         topping_ids = []
+        #@customer = current_customer
         @pizza = Pizza.new(pizza_params)
         @pizza.customer_id = session[:customer_id]
         topping_ids << @pizza.toppings

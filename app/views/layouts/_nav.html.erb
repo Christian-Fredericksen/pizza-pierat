@@ -1,7 +1,7 @@
 <% if logged_in? %>
     <h5><%= link_to "Logout", sessions_path, method: :delete %> | 
         <%= link_to "My History", customer_pizzas_path(current_customer.id) %> |
-        <%= link_to "My Home", customer_path(current_customer.id) %></h5>
+        <%= link_to "My Home", customer_path(current_customer.id) if @current_customer != current_customer.id %></h5>
     <% else %>
     <h5>You are not logged in! <%= link_to "Login", login_path %>, 
         <%= link_to "Sign Up", new_customer_path %> or </h5>

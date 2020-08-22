@@ -8,7 +8,6 @@ class CustomersController < ApplicationController
 
     def create
         @customer = Customer.create(customer_params)
-        #byebug
         session[:customer_id] = @customer.id
         redirect_to customer_path(@customer)
     end
@@ -17,17 +16,17 @@ class CustomersController < ApplicationController
         if session[:customer_id]
         current_customer = Customer.find(session[:customer_id])
         end
-
-        #@current_customer ||= Customer.find_by_id(session[:customer_id]) if session[:customer_id]
-
     end
     def index
         @customers = Customer.all
     end
 
     def show
-        #byebug
-        @current_customer = Customer.find(params[:id])
+        
+       if @customer = Customer.find(params[:id])
+       else
+        current_customer
+       end
     end
 
     private
