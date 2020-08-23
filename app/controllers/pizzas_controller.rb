@@ -16,8 +16,9 @@ class PizzasController < ApplicationController
         if @pizza.save        
         redirect_to pizza_path(@pizza)
         else
-            flash[:errors] = ["All fields must be filled"]
             redirect_to new_pizza_path
+            flash[:errors] = ["All fields must be filled"]
+            
         end
     end   
 
