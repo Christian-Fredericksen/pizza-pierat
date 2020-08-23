@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   resources :pizzas 
   resources :customers do 
-    resources :pizzas, only: [:new, :create, :show, :index]
+    resources :pizzas
   end
   resources :toppings
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

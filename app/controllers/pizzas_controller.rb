@@ -1,4 +1,6 @@
 class PizzasController < ApplicationController
+    #before_action :authorized_to_edit?
+
     def new 
         @customer = current_customer
         @pizza = Pizza.new 
@@ -23,13 +25,24 @@ class PizzasController < ApplicationController
     end
 
     def show   
-        customer_id = session[:customer_id] 
-        @pizza = Pizza.find(params[:id])
+       if @pizza = Pizza.find(params[:id])
+    else
+        current_customer
+       end
     end
 
     def edit
         @customer = current_customer
         @pizza = Pizza.find(params[:id])
+        if authorized_to_edit?(@pizza)
+        #  @pizza = Pizza.find(params[:id])
+            render :edit   
+           else 
+            flash[:errors] = ["You cannot edit that pizza"]
+            redirect_to customer_pizza_path(current_customer)   
+           end
+
+        
     end
 
     def update

@@ -1,7 +1,7 @@
 <h1>Past Pizzas</h1>
 
 <% current_customer.pizzas.each do |p| %>
-    <%= p.description %><br>
+    No<%= p.id %>.  <%= p.description %><br>
     <% p.add_ons.each do |t| %>
         <li>
             <%= t.topping.name %>

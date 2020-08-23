@@ -1,3 +1,4 @@
+
 <h1>You got: </h1>
 <br>
 <p> A <%=  @pizza.description %>
@@ -6,5 +7,5 @@
             <%= t.name %>
         </li>
     <% end %><br>
-    If this is correct you may <%= link_to "place", customer_pizzas_path(current_customer.id) %></h5> your order or <%= link_to "edit", edit_pizza_path(@pizza) %>.
+    If this is correct you may <%= link_to "place", customer_pizzas_path(current_customer.id) %></h5> your order or <%= link_to "edit", edit_customer_pizza_path(@pizza.customer_id) %>.
 </p>
