@@ -16,7 +16,8 @@ class PizzasController < ApplicationController
         if @pizza.save        
         redirect_to pizza_path(@pizza)
         else
-            render :new
+            flash[:errors] = ["All fields must be filled"]
+            redirect_to new_pizza_path
         end
     end   
 
@@ -35,12 +36,11 @@ class PizzasController < ApplicationController
         @customer = current_customer
         @pizza = Pizza.find(params[:id])
         if authorized_to_edit?(@pizza)
-        #  @pizza = Pizza.find(params[:id])
             render :edit   
-           else 
+        else 
             flash[:errors] = ["You cannot edit that pizza"]
             redirect_to customer_pizza_path(current_customer)   
-           end
+        end
 
         
     end
