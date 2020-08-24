@@ -7,9 +7,14 @@ class CustomersController < ApplicationController
     end
 
     def create
-        @customer = Customer.create(customer_params)
+        @customer = Customer.new(customer_params)
+        if @customer.save
         session[:customer_id] = @customer.id
         redirect_to customer_path(@customer)
+        else
+            flash[:errors] = @customer.errors.full_messages
+            render :new
+        end
     end
 #Read
     def current_customer

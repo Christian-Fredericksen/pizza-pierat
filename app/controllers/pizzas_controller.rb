@@ -1,5 +1,6 @@
 class PizzasController < ApplicationController
     #before_action :authorized_to_edit?
+    before_action :authorized
 
     def new 
         @customer = current_customer
@@ -7,18 +8,14 @@ class PizzasController < ApplicationController
     end
 
     def create 
-        topping_ids = []
-        #@customer = current_customer
         @pizza = Pizza.new(pizza_params)
         @pizza.customer_id = session[:customer_id]
-        topping_ids << @pizza.toppings
-        
-        if @pizza.save        
-        redirect_to pizza_path(@pizza)
+        if @pizza.valid?
+            @pizza.save  
+        redirect_to customer_pizza_path(current_customer, @pizza)
         else
-            redirect_to new_pizza_path
-            flash[:errors] = ["All fields must be filled"]
-            
+            flash[:errors] = @pizza.errors.full_messages
+            redirect_to new_customer_pizza_path(current_customer.id)   
         end
     end   
 
@@ -42,8 +39,6 @@ class PizzasController < ApplicationController
             flash[:errors] = ["You cannot edit that pizza"]
             redirect_to customer_pizza_path(current_customer)   
         end
-
-        
     end
 
     def update

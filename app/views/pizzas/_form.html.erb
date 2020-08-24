@@ -20,11 +20,12 @@
     <%= f.label :light %> 
     <%= f.radio_button :cheese, 'Light cheese' %> |
     <%= f.label :regular %>
-    <%= f.radio_button :cheese, 'Regular cheese' %> |
+    <%= f.radio_button :cheese, 'Regular cheese', :required => true %> |
+
     <%= f.label :extra %>
     <%= f.radio_button :cheese, 'Extra cheese' %><br>
 
-    <h4>Add ons:</h4>
+    <h4>Toppings:</h4>
     <p>    
     <% for topping in Topping.order_toppings %>
       <%= topping.name %> 
