@@ -111,3 +111,7 @@ TOPPINGS NEW.HTML.ERB
 
 
 </body>
+on the customers show page have a search bar.
+takes in an input from the user.
+search by size
+the pizza controller receives the input 

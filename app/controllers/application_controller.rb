@@ -14,9 +14,6 @@ class ApplicationController < ActionController::Base
       if session[:customer_id]
         current_customer = Customer.find(session[:customer_id])
       end
-
-      #@current_customer ||= Customer.find_by_id(session[:customer_id]) if session[:customer_id]
-
     end
   
     def logged_in?

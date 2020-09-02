@@ -10,4 +10,18 @@ class Pizza < ApplicationRecord
     def description
     self.size + ", " + self.cheese + " " + self.crust + " pizza with: "
     end
+
+    def self.search(search)
+       if search
+        my_pies = Pizza.find_by(size: search)
+            if my_pies
+                customer.where(pizza_id: my_pies)
+            else
+                Pizza.all
+            end
+        else
+            Pizza.all
+        end
+    end
+
 end

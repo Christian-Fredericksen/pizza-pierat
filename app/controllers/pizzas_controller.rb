@@ -20,7 +20,7 @@ class PizzasController < ApplicationController
     end   
 
     def index
-        @pizzas = Pizza.all
+        @pizzas = Pizza.search(params[:search])
     end
 
     def show   
@@ -56,7 +56,7 @@ class PizzasController < ApplicationController
     private
 
     def pizza_params       
-        params.require(:pizza).permit(:size, :crust, :cheese, :customer_id, topping_ids: [] )
+        params.require(:pizza).permit(:size, :crust, :cheese, :customer_id, :search, topping_ids: [] )
     end
 
 end

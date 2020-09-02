@@ -9,4 +9,8 @@
     <% end %><br>
 <% end %>
 
+<%= form_tag customer_pizzas_path(current_customer.id), method: :get do%>
+    <%= text_field_tag(:search, params[:search])%>
+    <%= submit_tag "submit" %>
+<% end %>    
 
