@@ -1,6 +1,5 @@
 <h1>Past Pizzas</h1>
-
-<% current_customer.pizzas.each do |p| %>
+<% @pizzas.each do |p| %>
     <%= p.description %><br>
     <% p.add_ons.each do |t| %>
         <li>
@@ -9,8 +8,4 @@
     <% end %><br>
 <% end %>
 
-<%= form_tag customer_pizzas_path(current_customer.id), method: :get do%>
-    <%= text_field_tag(:search, params[:search])%>
-    <%= submit_tag "submit" %>
-<% end %>    
 

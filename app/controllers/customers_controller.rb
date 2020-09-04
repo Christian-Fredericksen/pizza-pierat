@@ -25,10 +25,8 @@ class CustomersController < ApplicationController
     def index
         @customers = Customer.all
     end
-    
 
     def show
-        
        if @customer = Customer.find(params[:id])
        else
         current_customer

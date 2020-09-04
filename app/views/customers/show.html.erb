@@ -5,4 +5,8 @@
 <% end %>
 <p><%= link_to "Build", new_customer_pizza_path(current_customer.id)%> your pizza.</p>
 
-   
+<%= form_tag customer_pizzas_path(current_customer.id), method: :get do %>
+    Search your past creations by size, cheese, or crust: <br> 
+    <%= text_field_tag :search, params[:search]%>
+    <%= submit_tag "Search", name: nil %>
+<% end %><br>    

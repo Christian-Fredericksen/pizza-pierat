@@ -2,28 +2,28 @@
 <h4>Size:</h4>
 <%= form_for @pizza do |f| %>
     <%= f.label :small %> 
-    <%= f.radio_button :size, 'Small, 10"' %> |
+    <%= f.radio_button :size, 'small' %> |
     <%= f.label :medium %>
-    <%= f.radio_button :size, 'Medium, 12"' %> |
+    <%= f.radio_button :size, 'medium' %> |
     <%= f.label :large %>
-    <%= f.radio_button :size, 'Large, 14"' %>
+    <%= f.radio_button :size, 'large' %>
     
     <h4>Crust:</h4>
     <%= f.label :thin %> 
-    <%= f.radio_button :crust, 'Thin crust' %> |
+    <%= f.radio_button :crust, 'thin' %> |
     <%= f.label :hand_tossed %>
-    <%= f.radio_button :crust, 'Hand tossed' %> |
+    <%= f.radio_button :crust, 'tossed' %> |
     <%= f.label :pan %>
-    <%= f.radio_button :crust, 'Pan' %>
+    <%= f.radio_button :crust, 'pan' %>
 
     <h4>Cheese:</h4>
     <%= f.label :light %> 
-    <%= f.radio_button :cheese, 'Light cheese' %> |
+    <%= f.radio_button :cheese, 'light' %> |
     <%= f.label :regular %>
-    <%= f.radio_button :cheese, 'Regular cheese', :required => true %> |
+    <%= f.radio_button :cheese, 'regular', :required => true %> |
 
     <%= f.label :extra %>
-    <%= f.radio_button :cheese, 'Extra cheese' %><br>
+    <%= f.radio_button :cheese, 'extra' %><br>
 
     <h4>Toppings:</h4>
     <p>    
@@ -35,6 +35,4 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-    
-
-    <% end %>
+<% end %>

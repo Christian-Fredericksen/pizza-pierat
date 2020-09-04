@@ -1,6 +1,5 @@
 class ToppingsController < ApplicationController
     skip_before_action :authorized, only: [:new, :create]
- 
     def new
         @topping = Topping.new 
     end

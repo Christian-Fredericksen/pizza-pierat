@@ -1,5 +1,4 @@
 class PizzasController < ApplicationController
-    #before_action :authorized_to_edit?
     before_action :authorized
 
     def new 
@@ -19,11 +18,11 @@ class PizzasController < ApplicationController
         end
     end   
 
-    def index
-        @pizzas = Pizza.search(params[:search])
+    def index        
+        @pizzas = current_customer.pizzas.search(params[:search])
     end
 
-    def show   
+    def show  
        if @pizza = Pizza.find(params[:id])
     else
         current_customer
@@ -56,7 +55,7 @@ class PizzasController < ApplicationController
     private
 
     def pizza_params       
-        params.require(:pizza).permit(:size, :crust, :cheese, :customer_id, :search, topping_ids: [] )
+        params.require(:pizza).permit(:size, :crust, :cheese, :customer_id, topping_ids: [] )
     end
 
 end
